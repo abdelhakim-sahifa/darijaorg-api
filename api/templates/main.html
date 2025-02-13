@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darija Words API Documentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+        font-family: 'Poppins', sans-serif;
+
+    }
+    .logo{
+        width: 70px;
+        height: 70px;
+    }
+    body {
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      color: #333;
+     
+      width: 100%;
+    }
+    header {
+      background: black;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #2c3e50;
+      margin-top: 0;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .endpoint {
+      margin-bottom: 30px;
+    }
+    .endpoint h3 {
+      margin-bottom: 10px;
+      color: #3498db;
+    }
+    .endpoint p {
+      margin: 5px 0;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      padding: 10px;
+      background: black;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Darija Words API Documentation</h1>
+  </header>
+  <div class="container">
+    <img class="logo" src="https://i.ibb.co/QpG1Q6n/Darija-logo.png" alt="">
+
+    <h2>Introduction</h2>
+    <p>
+      The Darija Words API provides access to a dataset of Darija (Moroccan Language) words, including nouns, verbs, adjectives, adverbs, and pronouns. The API allows you to retrieve, search, and filter words based on various criteria.
+    </p>
+    <p>
+      <strong>Base URL:</strong> <code>https://darijaorg-api.vercel.app</code>
+    </p>
+
+    <h2>Endpoints</h2>
+
+    <div class="endpoint">
+      <h3>1. Get All Words</h3>
+      <p><strong>Endpoint:</strong> <code>/words</code></p>
+      <p><strong>Method:</strong> <code>GET</code></p>
+      <p><strong>Description:</strong> Retrieve all words in the dataset.</p>
+      <p><strong>Example Request:</strong></p>
+      <pre>GET https://darijaorg-api.vercel.app/words</pre>
+      <p><strong>Example Response:</strong></p>
+      <pre>
+{
+  "data": {
+    "a-noun-akhe-brother": {
+      "type": "noun",
+      "word": "akhe",
+      "translation": "brother",
+      "details": "-",
+      "example": "-",
+      "gender": "-",
+      "phonetic": "-",
+      "plural": "khout",
+      "prounouns": {
+        "her": "Khouha",
+        "his": "Khouh",
+        "my": "Khoya",
+        "our": "Khouna",
+        "their": "Khouhom",
+        "your-pm": "Khoukom",
+        "your-sf": "Khoueki",
+        "your-sm": "Khouek"
+      },
+      "prounouns-plural": {
+        "her": "khoutha",
+        "his": "khouto",
+        "my": "khouty",
+        "our": "khoutna",
+        "their": "khouthom",
+        "your-pm": "khoutkom",
+        "your-sf": "khouteki",
+        "your-sm": "khoutek"
+      },
+      "singular": "-"
+    }
+  }
+}
+      </pre>
+    </div>
+
+    <div class="endpoint">
+      <h3>2. Get Words by Type</h3>
+      <p><strong>Endpoint:</strong> <code>/words/{type}</code></p>
+      <p><strong>Method:</strong> <code>GET</code></p>
+      <p><strong>Description:</strong> Retrieve words filtered by type (e.g., noun, verb, adjective).</p>
+      <p><strong>Example Request:</strong></p>
+      <pre>GET https://darijaorg-api.vercel.app/words/noun</pre>
+      <p><strong>Example Response:</strong></p>
+      <pre>
+{
+  "data": {
+    "a-noun-akhe-brother": {
+      "type": "noun",
+      "word": "akhe",
+      "translation": "brother",
+      "details": "-",
+      "example": "-",
+      "gender": "-",
+      "phonetic": "-",
+      "plural": "khout",
+      "prounouns": {
+        "her": "Khouha",
+        "his": "Khouh",
+        "my": "Khoya",
+        "our": "Khouna",
+        "their": "Khouhom",
+        "your-pm": "Khoukom",
+        "your-sf": "Khoueki",
+        "your-sm": "Khouek"
+      },
+      "prounouns-plural": {
+        "her": "khoutha",
+        "his": "khouto",
+        "my": "khouty",
+        "our": "khoutna",
+        "their": "khouthom",
+        "your-pm": "khoutkom",
+        "your-sf": "khouteki",
+        "your-sm": "khoutek"
+      },
+      "singular": "-"
+    }
+  }
+}
+      </pre>
+    </div>
+
+    <div class="endpoint">
+      <h3>3. Get Word by ID</h3>
+      <p><strong>Endpoint:</strong> <code>/words/{word_id}</code></p>
+      <p><strong>Method:</strong> <code>GET</code></p>
+      <p><strong>Description:</strong> Retrieve details for a specific word by its ID.</p>
+      <p><strong>Example Request:</strong></p>
+      <pre>GET https://darijaorg-api.vercel.app/words/a-noun-akhe-brother</pre>
+      <p><strong>Example Response:</strong></p>
+      <pre>
+{
+  "data": {
+    "type": "noun",
+    "word": "akhe",
+    "translation": "brother",
+    "details": "-",
+    "example": "-",
+    "gender": "-",
+    "phonetic": "-",
+    "plural": "khout",
+    "prounouns": {
+      "her": "Khouha",
+      "his": "Khouh",
+      "my": "Khoya",
+      "our": "Khouna",
+      "their": "Khouhom",
+      "your-pm": "Khoukom",
+      "your-sf": "Khoueki",
+      "your-sm": "Khouek"
+    },
+    "prounouns-plural": {
+      "her": "khoutha",
+      "his": "khouto",
+      "my": "khouty",
+      "our": "khoutna",
+      "their": "khouthom",
+      "your-pm": "khoutkom",
+      "your-sf": "khouteki",
+      "your-sm": "khoutek"
+    },
+    "singular": "-"
+  }
+}
+      </pre>
+    </div>
+
+    <div class="endpoint">
+      <h3>4. Search Words</h3>
+      <p><strong>Endpoint:</strong> <code>/search</code></p>
+      <p><strong>Method:</strong> <code>GET</code></p>
+      <p><strong>Query Parameters:</strong></p>
+      <ul>
+        <li><code>q</code>: Search query (e.g., <code>brother</code>).</li>
+        <li><code>type</code>: Filter by type (optional).</li>
+      </ul>
+      <p><strong>Example Request:</strong></p>
+      <pre>GET https://darijaorg-api.vercel.app/search?q=brother</pre>
+      <p><strong>Example Response:</strong></p>
+      <pre>
+{
+  "data": {
+    "a-noun-akhe-brother": {
+      "type": "noun",
+      "word": "akhe",
+      "translation": "brother",
+      "details": "-",
+      "example": "-",
+      "gender": "-",
+      "phonetic": "-",
+      "plural": "khout",
+      "prounouns": {
+        "her": "Khouha",
+        "his": "Khouh",
+        "my": "Khoya",
+        "our": "Khouna",
+        "their": "Khouhom",
+        "your-pm": "Khoukom",
+        "your-sf": "Khoueki",
+        "your-sm": "Khouek"
+      },
+      "prounouns-plural": {
+        "her": "khoutha",
+        "his": "khouto",
+        "my": "khouty",
+        "our": "khoutna",
+        "their": "khouthom",
+        "your-pm": "khoutkom",
+        "your-sf": "khouteki",
+        "your-sm": "khoutek"
+      },
+      "singular": "-"
+    }
+  }
+}
+      </pre>
+    </div>
+
+    <h2>Error Handling</h2>
+    <p>
+      The API returns the following error responses:
+    </p>
+    <ul>
+      <li><strong>404 Not Found</strong>: The requested resource does not exist.</li>
+      <li><strong>400 Bad Request</strong>: Invalid query parameters or malformed request.</li>
+    </ul>
+
+    <h2>Rate Limiting</h2>
+    <p>
+      The API is rate-limited to 100 requests per hour per IP address. Exceeding this limit will result in a <code>429 Too Many Requests</code> response.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      For questions or feedback, please contact:
+      <br>
+      <strong>Email:</strong> <a href="mailto:abdelhakim.sahifa@gmail.com">abdelhakim.sahifa@gmail.com</a>
+      <br>
+      <strong>GitHub:</strong> <a href="https://github.com/abdelhakim-sahifa">Abdelhakim-Sahifa</a>
+      <br>
+      <strong>GitHub:</strong> <a href="https://github.com/darijaorg">Darijaorg</a>
+    </p>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Darijaorg. All rights reserved.
+  </div>
+</body>
+</html>
