@@ -1,3 +1,4 @@
+
 # **Darija Words API**
 
 This is a Flask-based API that provides access to a dataset of Darija (Moroccan language) words, including nouns, verbs, adjectives, adverbs, and pronouns. The data is stored in a Firebase Realtime Database, and the API allows users to retrieve, search, and filter words based on various criteria.
@@ -58,7 +59,7 @@ This is a Flask-based API that provides access to a dataset of Darija (Moroccan 
 ### **Base URL**
 
 ```
-http://127.0.0.1:5000
+https://darijaorg-api.vercel.app/
 ```
 
 ### **1. Get All Words**
@@ -69,7 +70,7 @@ Retrieve all words in the dataset.
 - **Method**: `GET`
 - **Example Request**:
   ```
-  GET http://127.0.0.1:5000/words
+  GET https://darijaorg-api.vercel.app/words
   ```
 - **Example Response**:
   ```json
@@ -151,7 +152,7 @@ Retrieve words filtered by type (e.g., noun, verb, adjective).
 - **Method**: `GET`
 - **Example Request**:
   ```
-  GET http://127.0.0.1:5000/words/noun
+  GET https://darijaorg-api.vercel.app/words/noun
   ```
 - **Example Response**:
   ```json
@@ -202,7 +203,7 @@ Retrieve details for a specific word by its ID.
 - **Method**: `GET`
 - **Example Request**:
   ```
-  GET http://127.0.0.1:5000/words/a-noun-akhe-brother
+  GET https://darijaorg-api.vercel.app/words/a-noun-akhe-brother
   ```
 - **Example Response**:
   ```json
@@ -254,7 +255,7 @@ Search for words by translation or word.
   - `type`: Filter by type (optional).
 - **Example Request**:
   ```
-  GET http://127.0.0.1:5000/search?q=brother
+  GET https://darijaorg-api.vercel.app/search?q=brother
   ```
 - **Example Response**:
   ```json
