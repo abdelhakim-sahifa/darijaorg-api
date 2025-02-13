@@ -343,6 +343,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or feedback, please contact:
 
-- **Your Name**
-- **Email**: your.email@example.com
-- **GitHub**: [your-username](https://github.com/your-username)
+- **Abdelhakim Sahifa**
+- **Email**: abdelhakim.sahifa@gmail.com 
+- **GitHub**: [abdelhakim-sahifa](https://github.com/abdelhakim-sahifa)
+- - **Darijaorg.**
+- **Email**: darija-org@gmail.com 
+- **GitHub**: [Darijaorg](https://github.com/darijaorg)
