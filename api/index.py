@@ -1,7 +1,12 @@
-from flask import Flask, jsonify, request , render_template
+from flask import Flask, jsonify, request, render_template
 import requests
+from flask_cors import CORS  # Import CORS from flask_cors
 
 app = Flask(__name__)
+
+# Enable CORS for all routes, allowing requests from any origin
+CORS(app)  
+
 
 # Firebase Realtime Database URL and Path
 DATABASE_URL = "https://darija2024-database-default-rtdb.firebaseio.com/"
@@ -15,10 +20,10 @@ def fetch_data():
         return response.json()
     else:
         return None
+
 @app.route('/')
 def home():
     return render_template('main.html')  # Render the HTML template
-
 
 @app.route('/words', methods=['GET'])
 def get_all_words():
@@ -79,4 +84,4 @@ def bad_request(error):
     return jsonify({"error": "Invalid request"}), 400
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(debug=True)
